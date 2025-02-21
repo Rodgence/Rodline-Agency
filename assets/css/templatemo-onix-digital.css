@@ -2023,3 +2023,57 @@ responsive
     margin-bottom: 20px;
   }
 }
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 10px 0;
+    z-index: 1000; /* Ensure dropdown appears above other content */
+}
+
+.dropdown-menu li {
+    display: block;
+    padding: 8px 20px;
+    margin: 0;
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    color: #1e1e1e !important;
+    text-decoration: none;
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 0;
+}
+
+.dropdown-menu li:hover {
+    background: #f8f9fa;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Ensure the dropdown works in the sticky header */
+.header-sticky .dropdown-menu {
+    top: 80px; /* Adjust based on your header height */
+}
+
+/* Add a small arrow indicator */
+.dropdown-toggle::after {
+    content: '\f107'; /* FontAwesome down arrow */
+    font-family: 'FontAwesome';
+    margin-left: 5px;
+    font-size: 12px;
+}
